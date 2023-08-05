@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media_style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Triangle | Upload Train and Deploy</title>
+</head>
+<body>
+    <!--container-->
+    <div class="container">
+        <!--header-->
+        <div class="header">
+            <div class="navigation">
+                <div class="title">
+                    <h3>Triangle</h3>
+                </div>
+                <div class="navbar">
+                    <ul class="navbar_ul">
+                        <li class="navbar_list list"><a href="#home">Home</a></li>
+                        <li class="navbar_list list"><a href="#pricing">Pricing</a></li>
+                        <li class="navbar_list list"><a href="#how">How it works</a></li>
+                        <li class="navbar_list list"><a href="#about">About</a></li>
+                        <li class="navbar_list signup"><a href="#" id="signButton">Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+          
+        </div>
+         <!--section One Intro-->
+        <div class="section_one" id="home">
+           <div class="signup_form" id="signup">
+            <div id="closeForm">x</div>
+            <div class="signup_title">
+                <h3>Create an account</h3>
+                <p>lets get you started</p>
+            </div>
+            <form action="{% url 'signup' %}" method="post">
+                {% csrf_token %}
+                <label for="name">Company Name</label>
+                <input type="text" name="name" id="" placeholder="Company Name">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="" placeholder="Email">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="" placeholder="Password">
+                <input type="submit" value="continue" class="submit">
+                <span>already have an account? <a href="#" id="loginForm">Login</a></span>
+            
+                {% if error_message %}
+                    <p class="error">{{ error_message }}</p>
+                {% endif %}
+            </form>
+           </div>
+           <div class="login_form" id="login">
+            <div id="closeForm2">x</div>
+            <div class="signup_title">
+                <h3>Welcome Back</h3>
+                <p>login to your account</p>
+            </div>
+            <form action="{% url 'signin' %}" method="post">
+                {% csrf_token %}
+               <label for="email">Email</label>
+               <input type="email" name="email" id="" placeholder="Email">
+               <label for="password">Password</label>
+               <input type="password" name="password" id="" placeholder="Password">
+               <input type="submit" value="continue" class="submit">
+               <span>ready to get started? <a href="#" id="signForm">Sign up</a></span>
+            </form>
+           </div>
+            <div class="main_text">
+                <h1>Intelligent Assistance <br>for Exceptional Support:<br> Elevate Your Customer Service<br> with AI-Powered Solutions
+                </h1>
+                <p>The AI system designed to assist companies in  <br>training data for customer service purposes. Its<br>
+                the new paradigm</p>
+                <div class="button_main">
+                    <a href="#"><button>Start now</button></a>
+                </div>
+                <div class="main_socials">
+                    <ul class="social_list">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main_image">
+                <img src="{% static 'images/1.png' %}">
+            </div>
+        </div>
+        <!--navbar menu mobile-->
+        <div id="menu">
+            <span></span>
+            <span></span>
+            <span class="span_small"></span>
+        </div>
+        <div id="close_menu">
+            x
+        </div>
+       
+        
+        <!-- section two UTD-->
+        <div class="section_two" id="how">
+            <div class="triangle_model">
+                <div class="upload">
+                    <div class="utd_title">
+                        <h3>Upload</h3>
+                        <p>Upload your company data <br>to our machine learning platform</p>
+                    </div>
+                </div>
+                <hr class="hr">
+                <div class="train">
+                    <div class="utd_title">
+                        <h3>Train</h3>
+                        <p>Train your model <br>on the comapny data</p>
+                    </div>
+                </div>
+                <hr class="hr">
+                <div class="deploy">
+                    <div class="utd_title">
+                        <h3>Deploy</h3>
+                        <p>Deploy for model <br>for service rendering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--section three about-->
+        <div class="section_three" id="about">
+            <div class="about_main">
+                <h2>Why choose <br>
+                Triangle?</h2>
+                <p>An AI system designed to assist companies <br>in training data for customer service purposes.<br>It is a sophisticated and intelligent tool that leverages <br>machine learning and natural language processing techniques. <br> This AI systemacts as a virtual assistant, capable of analyzing vast amounts<br> of customer interactions, understanding their intent, and providing valuable <br>insights to improve customer service operations.</p>
+                <div class="button_main sec"><button>Start now</button></div>
+            </div>
+            <div class="about_sec">
+                <div class="about_cards">
+                    <div class="ab_card">
+                        <div class="ab_subcard">
+                            <div class="ab_img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="ab_text">
+                                <h3>Enhanced Efficiency</h3>
+                                <p> By automating the data training process, the AI system significantly improves efficiency by reducing the time and effort required for manual data analysis. It can process and analyze large volumes of customer interactions much faster, enabling companies to derive actionable insights in real-time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ab_card">
+                        <div class="ab_subcard">
+                            <div class="ab_img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="ab_text">
+                                <h3>Improved Customer Experience</h3>
+                                <p>The AI system helps companies gain a deeper understanding of their customers' needs, preferences, and pain points by analyzing their interactions. With this valuable information, companies can tailor their customer service strategies and provide personalized experiences, leading to increased customer satisfaction and loyalty.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--section 3.2-->
+        <div class="about_cards card_2">
+            <div class="ab_card">
+                <div class="ab_subcard">
+                    <div class="ab_img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="ab_text">
+                        <h3>Accurate Sentiment Analysis</h3>
+                        <p> The AI system excels in sentiment analysis, accurately gauging customer sentiment from their interactions. By identifying positive, negative, or neutral sentiments, companies can proactively address customer concerns, identify areas for improvement, and take appropriate actions to enhance their customer service quality.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ab_card">
+                <div class="ab_subcard">
+                    <div class="ab_img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="ab_text">
+                        <h3>Intelligent Issue Resolution</h3>
+                        <p>With its ability to understand natural language, the AI system can identify recurring issues or frequently asked questions and provide intelligent solutions. This helps customer service representatives respond more effectively and promptly, leading to faster issue resolution and reduced customer wait times.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ab_card">
+                <div class="ab_subcard">
+                    <div class="ab_img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="ab_text">
+                        <h3>Scalability and Consistency</h3>
+                        <p> As an AI-powered solution, the system ensures scalability and consistency in data training. It can handle a large volume of customer interactions without compromising quality. Moreover, it maintains consistency in training across different datasets, ensuring that customer service representatives receive standardized and up-to-date information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about_cards card_2">
+            <div class="ab_card">
+                <div class="ab_subcard">
+                    <div class="ab_img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="ab_text">
+                        <h3>Continuous Learning</h3>
+                        <p>The AI system can adapt and learn from new customer interactions, constantly improving its understanding and response capabilities. It can identify emerging trends, uncover patterns, and suggest updates to training data, allowing companies to stay ahead in the ever-evolving customer service landscape.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ab_card">
+                <div class="ab_subcard">
+                    <div class="ab_img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="ab_text">
+                        <h3>Cost Savings</h3>
+                        <p> By automating data training and analysis, the AI system reduces the need for manual labor and dedicated resources. This results in cost savings for companies, as they can optimize their customer service operations without significantly increasing their workforce.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ab_card">
+                <div class="ab_subcard">
+                    <div class="ab_img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="ab_text">
+                        <h3>Overall</h3>
+                        <p> the AI system for training customer service data offers numerous benefits, including improved efficiency, enhanced customer experience, accurate sentiment analysis, intelligent issue resolution, scalability, consistency, continuous learning, and cost savings. By leveraging this technology, companies can streamline their customer service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- pricing plans-->
+        <div class="plans" id="pricing">
+            <div class="plan_title">
+                <h2>Ready to Get Started?</h2>
+                <h3>Choose your plan</h3>
+            </div>
+            <div class="plan_card">
+                <div class="pl_card pl_one">
+                    <div class="price">
+                        <h4>Free</h4>
+                        <h1>$0<span>.00</span></h1>
+                    </div>
+                    <div class="features">
+                        <ul>
+                            <li><span><i class="bi bi-check2-all"></i></span>One company bot</li>
+                            <li><span><i class="bi bi-check2-all"></i></span>One custom link</li>
+                            <div class="button_main"><button class="pl_button">Get started</button></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pl_card pl_two">
+                    <div class="pl_two_header"></div>
+                    <div class="price">
+                        <h4>Pro</h4>
+                        <h1>$7<span>.99</span></h1>
+                    </div>
+                    <div class="features">
+                        <ul>
+                            <li><span><i class="bi bi-check2-all"></i></span>One company bot</li>
+                            <li><span><i class="bi bi-check2-all"></i></span>One custom link</li>
+                            <div class="button_main"><button class="pl_button">Get started</button></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pl_card pl_one">
+                    <div class="price">
+                        <h4>Premium</h4>
+                        <h1>$17<span> .69</span></h1>
+                    </div>
+                    <div class="features">
+                        <ul>
+                            <li><span><i class="bi bi-check2-all"></i></span>One company bot</li>
+                            <li><span><i class="bi bi-check2-all"></i></span>One custom link</li>
+                            <div class="button_main"><button class="pl_button">Get started</button></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <footer>
+            <div class="footer_title">
+                <h3>Triangle</h3>
+                <p>Upload, Train and Deploy</p>
+                <div class="footer_socials">
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <hr class="f_hr">
+                    <li><a href="#">Pricing</a></li>
+                    <hr class="f_hr">
+                    <li><a href="#">How it works</a></li>
+                    <hr class="f_hr">
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+
+        </footer>
+    </div>
+    
+<script src="{% static 'js/navbar.js' %}"></script>
+<script src="{% static 'js/form.js' %}"></script>
+</body>
+</html>
